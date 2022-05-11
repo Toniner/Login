@@ -1,0 +1,65 @@
+﻿@model LoginModel
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+@{
+	Layout = "_LayoutDeslogado";
+	ViewData["Title"] = "Login";
+}
+
+    @if(TempData["MessageErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close" > X </button>
+            @TempData["MessageErro"]
+        </div>
+    }
+<body background-image:url('https://images7.alphacoders.com/288/288712.jpg') ></body>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+                <a>Acesse seu controle de bar</a>
+			</div>
+			<div class="card-body">
+				<form asp-controller="Login" asp-action="Entrar" method="post">
+                  <div class="mb-3">
+                    <label for="Email1" class="form-label">Login</label>
+                    	<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" asp-for="Login" placeholder="Login" class="form-control" id="login">
+						</div>
+                        @Html.ValidationMessageFor(x => x.Login)
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                        <div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+                            <input type="password"  asp-for="Password" placeholder="Senha" class="form-control" id="password">
+						</div>
+                        @Html.ValidationMessageFor(x => x.Login)
+                  </div>
+                  <button type="submit"class="btn float-right login_btn">Entrar</button>
+                </form>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿@model HomeModel
+
+@{
+    ViewData["Title"] = "Pagina Inicial";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem vindo ao controle do seu bar, @Model.Name.</h1>
+    <p>Seu email de acesso é: @Model.Email </p>   
+</div>
+
+<table class="table table-dark table-hover">
+    <thead>
+    <tr>
+      <th class="letra" scope="col">Item</th>
+      <th class="letra" scope="col">Preço</th>
+      <th class="letra" scope="col">Imagem</th>
+      <th class="letra" scope="col">Codigo do Produto</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://pubimg.band.uol.com.br/files/2c0933a3fb3b6946e074.webp" width="120" height="85"></td>
+      <th>Coxinha</th>
+      <td>R$ 5,50</td>
+      <td>101215</td>
+    </tr>
+    <tr>
+      <td><img src="https://receitatodahora.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2022/02/esfiha-fechada-1024x683.jpg.webp" width="120" height="85"></td>
+      <th>Esfiha</th>
+      <td>R$ 7,50</td>
+      <td>101216</td>
+    </tr>
+    <tr>
+      <td><img src="https://www.lecado.com.br/wp-content/uploads/2020/03/EMPADA-DE-FRANGO.jpg" width="120" height="85"></td>
+      <td>Empadinha</td>
+      <td>R$ 4,50</td>
+      <td>101217</td>
+    </tr>
+    <tr>
+      <td><img src="https://receitasdetudo.blog.br/wp-content/uploads/2020/04/receita-de-bolinho-com-carne-moida.jpg" width="120" height="85"></td>
+      <th>Bolinho de carne</th>
+      <td>R$ 7,50</td>
+      <td>101218</td>
+    </tr>
+    <tr>
+      <td><img src="https://static.clubedaanamariabraga.com.br/wp-content/uploads/2019/12/pastel-de-feira-1024x576.jpg" width="120" height="85"></td>
+      <th>Pastel</th>
+      <td>R$ 5,50</td>
+      <td>101219</td>
+    </tr>
+  </tbody>
+</table>

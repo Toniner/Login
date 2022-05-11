@@ -1,0 +1,37 @@
+﻿@model PedidoModel
+@{
+    ViewData["Title"] = "Adcionar pedido novo";
+}
+
+
+<div class="text-center">
+	<h1 class="display-4"> Cadastrar novo Pedido </h1>
+</div>
+
+<form asp-controller="Pedido" asp-action="Create" method="post">
+  <div class="mb-3">
+    <label for="Name" class="form-label">Nome</label>
+    <input type="text" asp-for="Name" class="form-control" id="Inputnome" aria-describedby="nomeHelp" placeholder="Digite o nome do cliente">
+    @Html.ValidationMessageFor(x => x.Name)
+  </div>
+
+  <div class="mb-3">
+    <label for="pedidos" class="form-label">N° Pedido</label>
+    <input type="text" asp-for="Number" class="form-control" id="InputPedidos">
+    @Html.ValidationMessageFor(x => x.Number)
+  </div>
+
+    <div class="mb-3">
+    <label for="itens" class="form-label">Itens</label>
+    <input type="text" asp-for="Itens" class="form-control" id="InputItens">
+    @Html.ValidationMessageFor(x => x.Itens)
+  </div>
+
+    <div class="mb-3">
+    <label for="valor" class="form-label">Valor</label>
+    <input type="text" asp-for="Price" class="form-control" id="InputValor">
+    @Html.ValidationMessageFor(x => x.Price)
+  </div>
+  <button type="submit" class="btn btn-primary">Adcionar</button>
+  <a class="btn alert-secondary" asp-controller="Pedido" asp-action="index">Voltar</a>
+</form>
